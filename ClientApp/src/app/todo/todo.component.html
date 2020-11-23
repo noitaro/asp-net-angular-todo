@@ -1,1 +1,16 @@
-<p>todo works!</p>
+<p *ngIf="!todoes"><em>Loading...</em></p>
+
+<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="todoes">
+  <thead>
+    <tr>
+      <th>No.</th>
+      <th>Title</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let forecast of todoes">
+      <td>{{ forecast.id }}</td>
+      <td>{{ forecast.title }}</td>
+    </tr>
+  </tbody>
+</table>
